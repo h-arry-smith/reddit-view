@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import {getSamplePosts} from './util/Reddit'
+import {PostList} from './features/posts/PostList'
 
 function App() {
-  console.log(getSamplePosts());
   return (
     <div className="App">
-      <h1>Reddit App</h1>
+      <PostList />
     </div>
   );
 }
