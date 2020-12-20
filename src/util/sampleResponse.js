@@ -1,4 +1,4 @@
-{
+export const sampleData = {
   "kind": "Listing",
   "data": {
     "modhash": "",
