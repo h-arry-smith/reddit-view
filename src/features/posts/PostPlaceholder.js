@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './PostPlaceholder.css';
-
 export const PostPlaceholder = () => {
   return (
     <div className="PostPlaceholder">
