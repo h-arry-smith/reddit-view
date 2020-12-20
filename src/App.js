@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +12,7 @@ import {DetailPost} from './features/detailpost/DetailPost'
 
 function App() {
   return (
-    <div className="App">
+    <div className="text-gray-800 bg-gray-100">
       <Router>
         <NavBar />        
 
