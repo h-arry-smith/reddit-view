@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './Post.css';
+
 export const Post = ({post}) => {
 
   let thumbImg;
@@ -8,11 +10,15 @@ export const Post = ({post}) => {
   }
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>Subreddit: {post.subreddit} | Author: {post.author}</p>
-      <p>{post.score}</p>
-      {thumbImg}
+    <div className="Post">
+      <div className="Post-image">
+        {thumbImg}
+      </div>
+      <div className="Post-cardText">
+        <h1 className="Post-title">{post.title}</h1>
+        <p className="Post-info">Subreddit: {post.subreddit} | Author: {post.author}</p>
+        <p className="Post-score">{post.score}</p>
+      </div>
     </div>
   );
 }

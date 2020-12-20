@@ -1,0 +1,24 @@
+.Post {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgba(0,0,0,0.03);
+
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
+}
+
+.Post:hover {
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.3);
+}
+
+.Post-image {
+  margin-right: 1rem;
+}
+
+.Post-title {
+  font-size: 2rem;
+  color: #111111;
+  font-weight: 500;
+}
