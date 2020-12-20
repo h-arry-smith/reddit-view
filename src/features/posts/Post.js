@@ -17,7 +17,9 @@ export const Post = ({post}) => {
       <div className="Post-cardText">
         <h1 className="Post-title">{post.title}</h1>
         <p className="Post-info">Subreddit: {post.subreddit} | Author: {post.author}</p>
-        <p className="Post-score">{post.score}</p>
+      </div>
+      <div className="Post-score">
+        <p>{post.score}</p>
       </div>
     </div>
   );
