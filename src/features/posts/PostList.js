@@ -23,7 +23,7 @@ export const PostList = () => {
   if (postStatus === 'loading') {
     content = (
       <div>
-        {[1,1,1,1,1].map(() =>{ return <PostPlaceholder />})}
+        {[1,2,3,4,5].map((e) =>{ return <PostPlaceholder key={e}/>})}
       </div>
     )
   }

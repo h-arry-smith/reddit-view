@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './Post.css';
 
@@ -10,17 +11,19 @@ export const Post = ({post}) => {
   }
 
   return (
-    <div className="Post">
-      <div className="Post-image">
-        {thumbImg}
+    <Link to={`/post/${post.id}`}>
+      <div className="Post">
+        <div className="Post-image">
+          {thumbImg}
+        </div>
+        <div className="Post-cardText">
+          <h1 className="Post-title">{post.title}</h1>
+          <p className="Post-info">Subreddit: {post.subreddit} | Author: {post.author}</p>
+        </div>
+        <div className="Post-score">
+          <p>{post.score}</p>
+        </div>
       </div>
-      <div className="Post-cardText">
-        <h1 className="Post-title">{post.title}</h1>
-        <p className="Post-info">Subreddit: {post.subreddit} | Author: {post.author}</p>
-      </div>
-      <div className="Post-score">
-        <p>{post.score}</p>
-      </div>
-    </div>
+    </Link>
   );
 }
