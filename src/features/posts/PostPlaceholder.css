@@ -1,0 +1,35 @@
+.PostPlaceholder {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: grey;
+  color: darkgrey;
+}
+
+.PostPlaceholder-cardText {
+  width: 90%;
+}
+
+.PostPlaceholder-image {
+  margin-right: 1rem;
+  background-color: darkgrey;
+  font-size: 4rem;
+  color: grey;
+}
+
+.PostPlaceholder-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.PostPlaceholder-score {
+  text-align: center;
+  align-self: center;
+  width: 10%;
+  color: darkgrey;
+}
+
+.PostPlaceholder-score p {
+  font-size: 2rem;
+  font-weight: 600;
+}

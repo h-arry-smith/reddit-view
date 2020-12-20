@@ -3,6 +3,7 @@ import { useDispatch, useSelector} from 'react-redux'
 import { selectAllPosts, fetchPosts} from './postSlice'
 
 import { Post } from './Post'
+import { PostPlaceholder } from './PostPlaceholder'
 
 export const PostList = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ export const PostList = () => {
   if (postStatus === 'loading') {
     content = (
       <div>
-        Loading...
+        {[1,1,1,1,1].map(() =>{ return <PostPlaceholder />})}
       </div>
     )
   }
