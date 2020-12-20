@@ -15,6 +15,12 @@ export const getSamplePosts = () => {
       author: post.author
     }
 
+    if (post.thumbnail !== 'self') {
+      newPostObj.thumbnail = post.thumbnail;
+    } else {
+      post.thumbnail = null;
+    }
+
     posts.push(newPostObj);
   }
 
