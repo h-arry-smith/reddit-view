@@ -27,10 +27,11 @@ export const getPosts = (data) => {
     }
 
     // Include thumbnail if present
-    if (post.thumbnail !== 'self') {
-      newPostObj.thumbnail = post.thumbnail;
-    } else {
+    if (post.thumbnail === 'self' || post.thumbnail === 'default' || post.thumbnail === 'nsfw') {
       newPostObj.thumbnail = null;
+    } else {
+      console.log(post.thumbnail);
+      newPostObj.thumbnail = post.thumbnail;
     }
 
     posts.push(newPostObj);
