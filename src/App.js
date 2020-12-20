@@ -9,7 +9,7 @@ import {
 import {NavBar} from './app/NavBar'
 import {Home} from './app/Home'
 
-import {DetailPostView} from './features/posts/DetailPostView'
+import {DetailPost} from './features/detailpost/DetailPost'
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <main>
           <Switch>
             <Route path="/post/:postId">
-              <DetailPostView />
+              <DetailPost />
             </Route>
             <Route path="/">
               <Home />

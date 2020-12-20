@@ -8,7 +8,6 @@ export const fetchFrontPage = async () => {
     .then(response => response.json())
     .then(response => response.data);
 
-  console.log(data);
   return getPosts(data);
 }
 
@@ -23,7 +22,8 @@ export const getPosts = (data) => {
       subreddit: post.subreddit,
       title: post.title,
       score: post.score,
-      author: post.author
+      author: post.author,
+      url: post.url
     }
 
     // Include thumbnail if present
