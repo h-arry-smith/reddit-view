@@ -2,11 +2,15 @@ import React from 'react';
 import './App.css';
 
 import {PostList} from './features/posts/PostList'
+import {NavBar} from './app/NavBar'
 
 function App() {
   return (
     <div className="App">
-      <PostList />
+      <NavBar />
+      <main>
+        <PostList />
+      </main>
     </div>
   );
 }

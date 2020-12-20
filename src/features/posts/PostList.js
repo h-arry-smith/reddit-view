@@ -9,6 +9,7 @@ export const PostList = () => {
   const posts = useSelector(selectAllPosts)
 
   const postStatus = useSelector(state => state.posts.status)
+  const error = useSelector(state => state.posts.error)
 
   useEffect(() => {
     if (postStatus === 'idle') {
@@ -16,11 +17,38 @@ export const PostList = () => {
     }
   }, [postStatus, dispatch]);
 
+  let content = <div></div>;
+
+  if (postStatus === 'loading') {
+    content = (
+      <div>
+        Loading...
+      </div>
+    )
+  }
+
+  if (postStatus === 'succeeded') {
+    content = (
+      <div>
+        {posts.map(post => {
+          return <Post key={post.id} post={post} />
+        })}
+      </div>
+    )
+  }
+
+  if (postStatus === 'failed') {
+    content = (
+      <div>
+        <h1>Error!</h1>
+        <p>{error}</p>
+      </div>
+    )
+  }
+
   return (
     <div>
-      {posts.map(post => {
-        return <Post key={post.id} post={post} />
-      })}
+      {content}
     </div>
   );
 }

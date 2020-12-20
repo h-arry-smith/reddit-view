@@ -3,12 +3,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
+body {
+  background-color: #ffffff;
   font-family: Helvetica, sans-serif;
-  background-color: rgba(240,240,240,1);
   color: #222222;
 }
 
-body {
-  padding: 1rem;
+main {
+  position: relative;
+  top: 5.5rem;
+  width: 80%;
+  margin: 0 auto;
 }
