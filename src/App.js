@@ -12,7 +12,7 @@ import {DetailPostView} from './features/posts/DetailPostView'
 
 function App() {
   return (
-    <div className="App">
+    <div className="text-gray-800 bg-gray-100">
       <Router>
         <NavBar />        
 
