@@ -41,7 +41,7 @@ export const DetailPost = () => {
       </div>
 
       <div>
-        {postDetail.image ? <img src={postDetail.image} /> : ''}
+        {postDetail.image ? <img src={postDetail.image} alt=""/> : ''}
       </div>
 
       <div>
