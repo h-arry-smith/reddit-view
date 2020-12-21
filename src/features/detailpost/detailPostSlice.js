@@ -19,11 +19,29 @@ export const fetchPost = createAsyncThunk('detailpost/fetchPosts', async ({id, u
     return {'id': id, 'post': {}, 'comments': {}};
   }
 
-  return {
-    'id': id,
-    'post': data[0],
-    'comments': data[1]
+  let postContent = data[0].data.children[0].data;
+  let commentContent = data[1].data;
+
+  let postObj = {
+    id: id,
+    post : {
+      subreddit: postContent.subreddit,
+      title: postContent.title,
+      score: postContent.score,
+      mediaOnly: postContent.media_only,
+      isSelf: postContent.is_self,
+      selfText: postContent.selftext,
+      postHint: postContent.post_hint,
+    },
+    comments: {}
   }
+
+  // Check for images, if not use thumb
+  if (postContent.preview.images[0].source) {
+    postObj.image = postContent.preview.images[0].source.url
+  }
+
+  return postObj;
 })
 
 const detailPostsSlice = createSlice({
