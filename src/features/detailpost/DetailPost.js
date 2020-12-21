@@ -23,7 +23,7 @@ export const DetailPost = () => {
 
   if (postStatus === 'loading' || postStatus === 'idle') {
     return (
-      <div>
+      <div className="p-6 text-3xl text-gray-400">
         Loading...
       </div>
     )
