@@ -33,12 +33,14 @@ export const fetchPost = createAsyncThunk('detailpost/fetchPosts', async ({id, u
       selfText: postContent.selftext,
       postHint: postContent.post_hint,
     },
-    comments: {}
+    comments: {commentContent}
   }
 
-  // Check for images, if not use thumb
-  if (postContent.preview.images[0].source) {
-    postObj.image = postContent.preview.images[0].source.url
+  // Check for image, if it is - make url image, if not store just as url
+  if (postContent.post_hint === 'image') {
+    postObj.image = postContent.url
+  } else {
+    postObj.url = postContent.url
   }
 
   return postObj;

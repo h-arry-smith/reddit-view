@@ -30,13 +30,16 @@ export const DetailPost = () => {
 
   return (
     <div key={post.id}>
-      {thumbImg}
-      <h2>{post.title}</h2>
-      <p>{post.author}</p>
+      <div>
+        {thumbImg}
+        <h2>{post.title}</h2>
+        <p>{post.author}</p>
+        <p></p>
+      </div>
 
-      <p>
-        {JSON.stringify(postDetail)}
-      </p>
+      <div>
+        {postDetail.image ? <img src={postDetail.image} /> : ''}
+      </div>
     </div>
   );
 }
