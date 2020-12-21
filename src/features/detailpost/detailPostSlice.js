@@ -54,9 +54,6 @@ export const fetchPost = createAsyncThunk('detailpost/fetchPosts', async ({id, u
     },
     comments: createCommentObjects(commentContent),
   }
-
-  console.log(postObj.comments)
-
   // Check for image, if it is - make url image, if not store just as url
   if (postContent.post_hint === 'image') {
     postObj.image = postContent.url

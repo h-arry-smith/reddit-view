@@ -31,18 +31,21 @@ export const DetailPost = () => {
 
   return (
     <div key={post.id}>
-      <PostHead 
-        title={postDetail.post.title} 
-        author={post.author} 
-        score={postDetail.post.score} 
-        subreddit={postDetail.post.subreddit}
-      />
+      <div className="my-6">
+        <PostHead 
+          title={postDetail.post.title} 
+          author={post.author} 
+          score={postDetail.post.score} 
+          subreddit={postDetail.post.subreddit}
+        />
+      </div>
 
       <div>
         {postDetail.image ? <img src={postDetail.image} /> : ''}
       </div>
 
       <div>
+        <h2 className="mb-4 ml-6 text-2xl font-semibold text-gray-900">Top-Level Comments</h2>
         <CommentList comments={postDetail.comments}/>
       </div>
     </div>

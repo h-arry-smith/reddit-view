@@ -3,7 +3,7 @@ import { Comment } from './Comment'
 
 export const CommentList = ({comments}) => {
   return (
-    <div>
+    <div className="">
       {comments.map(comment => {
         return <Comment key={comment.id} comment={comment} />
       })}
