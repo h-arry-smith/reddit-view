@@ -28,6 +28,14 @@ export const DetailPost = () => {
     thumbImg = <img src={post.thumbnail} alt="little people"/>
   }
 
+  if (postStatus === 'loading') {
+    return (
+      <div>
+        Loading...
+      </div>
+    )
+  }
+
   return (
     <div key={post.id}>
       <div>
