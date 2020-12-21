@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom'
 import { CommentList } from '../comments/CommentList';
 import { selectPostById } from '../posts/postSlice';
 import { fetchPost } from './detailPostSlice'
+import { PostHead } from './PostHead';
 
 export const DetailPost = () => {
   let dispatch = useDispatch();
@@ -20,11 +21,6 @@ export const DetailPost = () => {
     }
   }, [dispatch, postStatus, post.url, post.id, match, postDetail.id]);
 
-  let thumbImg;
-  if (post.thumbnail) {
-    thumbImg = <img src={post.thumbnail} alt="little people"/>
-  }
-
   if (postStatus === 'loading' || postStatus === 'idle') {
     return (
       <div>
@@ -35,12 +31,12 @@ export const DetailPost = () => {
 
   return (
     <div key={post.id}>
-      <div>
-        {thumbImg}
-        <h2>{post.title}</h2>
-        <p>{post.author}</p>
-        <p></p>
-      </div>
+      <PostHead 
+        title={postDetail.post.title} 
+        author={post.author} 
+        score={postDetail.post.score} 
+        subreddit={postDetail.post.subreddit}
+      />
 
       <div>
         {postDetail.image ? <img src={postDetail.image} /> : ''}
