@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useParams} from 'react-router-dom'
+import { CommentList } from '../comments/CommentList';
 import { selectPostById } from '../posts/postSlice';
 import { fetchPost } from './detailPostSlice'
 
@@ -19,16 +20,12 @@ export const DetailPost = () => {
     }
   }, [dispatch, postStatus, post.url, post.id, match, postDetail.id]);
 
-  if (typeof postDetail === 'object') {
-    console.log(`${match} | ${postDetail.id}`);
-  }
-
   let thumbImg;
   if (post.thumbnail) {
     thumbImg = <img src={post.thumbnail} alt="little people"/>
   }
 
-  if (postStatus === 'loading') {
+  if (postStatus === 'loading' || postStatus === 'idle') {
     return (
       <div>
         Loading...
@@ -47,6 +44,10 @@ export const DetailPost = () => {
 
       <div>
         {postDetail.image ? <img src={postDetail.image} /> : ''}
+      </div>
+
+      <div>
+        <CommentList comments={postDetail.comments}/>
       </div>
     </div>
   );

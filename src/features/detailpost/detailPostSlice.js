@@ -1,10 +1,29 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, nanoid } from '@reduxjs/toolkit';
 
 const initialState = {
   data: [],
   status: 'idle',
   error: null
 };
+
+// Take comment content and return a list of constructed comment obj
+export const createCommentObjects = (commentContent) => {
+  let comments = [];
+  for (let child in commentContent) {
+    let comment = commentContent[child].data
+
+    let commentObj = {
+      id: nanoid(),
+      author: comment.author,
+      body: comment.body,
+      score: comment.score,
+    }
+
+    comments.push(commentObj);
+  }
+
+  return comments;
+}
 
 // TODO: Should be elevated to reddit util really
 export const fetchPost = createAsyncThunk('detailpost/fetchPosts', async ({id, url}) => {
@@ -20,7 +39,7 @@ export const fetchPost = createAsyncThunk('detailpost/fetchPosts', async ({id, u
   }
 
   let postContent = data[0].data.children[0].data;
-  let commentContent = data[1].data;
+  let commentContent = data[1].data.children
 
   let postObj = {
     id: id,
@@ -33,8 +52,10 @@ export const fetchPost = createAsyncThunk('detailpost/fetchPosts', async ({id, u
       selfText: postContent.selftext,
       postHint: postContent.post_hint,
     },
-    comments: {commentContent}
+    comments: createCommentObjects(commentContent),
   }
+
+  console.log(postObj.comments)
 
   // Check for image, if it is - make url image, if not store just as url
   if (postContent.post_hint === 'image') {
