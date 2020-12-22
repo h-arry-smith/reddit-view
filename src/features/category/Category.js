@@ -9,7 +9,7 @@ export const Category = ({name, active, onClick}) => {
   )
   }
   return (
-    <div onClick={onClick} className="flex items-center justify-center w-1/3 h-12 bg-white border-b-4 hover:border-gray-600">
+    <div onClick={onClick} className="flex items-center justify-center w-1/3 h-12 border-b-4 bg-gray-50 hover:border-gray-600">
       <p className="text-lg font-semibold tracking-wide text-gray-500 hover:text-gray-900">{name}</p>
     </div>
   );
