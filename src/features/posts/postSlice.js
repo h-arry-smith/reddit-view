@@ -18,7 +18,7 @@ const postsSlice = createSlice({
   initialState,
   reducers: {
     setEndpoint(state, action) {
-      state.endpoint = action.payload.endpoint;
+      state.endpoint = action.payload;
       state.status = 'idle';
     }
   },

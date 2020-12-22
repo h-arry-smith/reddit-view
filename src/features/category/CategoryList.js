@@ -9,7 +9,7 @@ export const CategoryList = () => {
   const current = useSelector(state => state.posts.endpoint);
   
   const setEndpointOnClick = (endpoint) => {
-    dispatch(setEndpoint({endpoint: endpoint}))
+    dispatch(setEndpoint(endpoint))
   }
 
   return (
