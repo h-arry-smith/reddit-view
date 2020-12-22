@@ -20,7 +20,7 @@ export const Post = ({post}) => {
       thumbImg = <p></p>
       break;
     default:
-      thumbImg = <img src={post.thumbnail} className="object-cover w-full" alt=""/>
+      thumbImg = <img src={post.thumbnail} className="h-auto mx-auto lg:h-full" alt=""/>
   }
 
   // TODO: Tidying up of post objects, pass as explicit props
