@@ -15,11 +15,21 @@ export const Post = ({post}) => {
           {thumbImg}
         </div>
         <div className="w-4/6 ml-4">
-          <p className="text-xs tracking-wide text-gray-500 uppercase">r/{post.subreddit} | u/{post.author}</p>
-          <h1 className="w-full text-xl font-semibold text-gray-900">{post.title}</h1>
+          
+          <div className="text-xs tracking-wide text-gray-500 uppercase">
+            <span id="subreddit">
+              r/{post.subreddit}
+            </span>
+            <span> | </span>
+            <span id="author">
+              u/{post.author}
+            </span>
+          </div>
+
+          <h1 id="title" className="w-full text-xl font-semibold text-gray-900">{post.title}</h1>
         </div>
         <div className="flex items-center justify-center w-1/6">
-          <p className="text-gray-600">{post.score}</p>
+          <p id="score" className="text-gray-600">{post.score}</p>
         </div>
       </div>
     </Link>
