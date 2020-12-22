@@ -14,10 +14,12 @@ export const NavBar = () => {
           <SubredditSelector />
         </div>
         <div className="text-lg font-semibold hover:text-yellow-600">
-          <Link to="/">Home</Link>
+          <Link to="/">
+            Home
+          </Link>
         </div>
       </div>
       <SearchBar />
     </div>
-  );
+  )
 }
