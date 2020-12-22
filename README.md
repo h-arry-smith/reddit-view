@@ -2,6 +2,8 @@
 
 RedditView is a minimal React/Redux reddit viewer, using the reddit JSON API. This project has been built for the CodeCademy Full Stack Career Path, as part of the portfolio projects.
 
+You can view this project live on [Github Pages](https://h-arry-smith.github.io/reddit-view/)
+
 ## Learning Aims
 * Create a self directed project, making design and implementation decision independantly, and understanding their advantages and trade offs.
 * Adhere to best practices to the best of my ability
