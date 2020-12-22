@@ -23,14 +23,8 @@ export const getPosts = (data) => {
       title: post.title,
       score: post.score,
       author: post.author,
-      url: `https://www.reddit.com/${post.permalink}`
-    }
-
-    // Include thumbnail if present
-    if (post.thumbnail === 'self' || post.thumbnail === 'default' || post.thumbnail === 'nsfw') {
-      newPostObj.thumbnail = null;
-    } else {
-      newPostObj.thumbnail = post.thumbnail;
+      url: `https://www.reddit.com/${post.permalink}`,
+      thumbnail: post.thumbnail
     }
 
     posts.push(newPostObj);

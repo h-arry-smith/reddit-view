@@ -4,8 +4,18 @@ import { Link } from 'react-router-dom'
 export const Post = ({post}) => {
 
   let thumbImg;
-  if (post.thumbnail) {
-    thumbImg = <img src={post.thumbnail} className="object-cover w-full" alt="little people"/>
+  switch (post.thumbnail) {
+    case 'self':
+      thumbImg = <p className="font-bold tracking-wide text-center text-gray-500 uppercase">self</p>;
+      break;
+    case 'nsfw':
+      thumbImg = <p className="font-bold tracking-wide text-center text-red-700 uppercase">nsfw</p>;
+      break;
+    case 'default':
+      thumbImg = <p></p>
+      break;
+    default:
+      thumbImg = <img src={post.thumbnail} className="object-cover w-full" alt="little people"/>
   }
 
   return (
