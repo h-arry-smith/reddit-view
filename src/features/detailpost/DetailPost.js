@@ -44,6 +44,12 @@ export const DetailPost = () => {
     )
   }
 
+  const image = (
+    <a href={postDetail.image}>
+      <img src={postDetail.image} className="w-auto mx-auto" style={{maxHeight: '40rem'}} alt=""/>
+    </a>
+  )
+
   return (
     <div key={post.id}>
       <RedditLink url={post.url}/>
@@ -56,12 +62,12 @@ export const DetailPost = () => {
         />
       </div>
 
-      <div>
-        {postDetail.image ? <img src={postDetail.image} alt=""/> : ''}
+      <div style={{maxHeight: '80rem'}}>
+        {postDetail.image ?  image : ''}
       </div>
 
       <div>
-        <h2 className="mb-4 ml-6 text-2xl font-semibold text-gray-900">Top-Level Comments</h2>
+        <h2 className="mx-2 mt-4 -mb-2 text-2xl font-semibold text-gray-900 border-t">Top-Level Comments</h2>
         <CommentList comments={postDetail.comments}/>
       </div>
     </div>

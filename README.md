@@ -15,6 +15,13 @@ RedditView is a minimal React/Redux reddit viewer, using the reddit JSON API. Th
 * React-Router v5
 * TailwindCSS 2.0
 
+## Future Work
+This project is limited in scope as to maxamise the learning by focusing on key ideas and then take them to new projects. These leaves plenty of options for expanding on this work.
+* Currently only shows top level comments, this could be expanded to show all the comments
+* User pages
+* Better support for video cards
+* Refactor reddit utility and components to better seperate concerns and presentation / container (something I learnt a lot about on this project!)
+
 ## License
 This code is published as part of a learning process, and its development is representative of this. It is published as a record of my process and in the hope that it might help others grow with me.
 
