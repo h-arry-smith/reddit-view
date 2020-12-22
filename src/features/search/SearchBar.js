@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { setEndpoint } from '../posts/postSlice'
 
 export const SearchBar = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const [searchText, setSearchText] = useState('');
 
@@ -11,8 +13,8 @@ export const SearchBar = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(setEndpoint(`/search.json?q=${searchText}`))
-    console.log(searchText);
     setSearchText('');
+    history.push('/');
   }
 
   return (
@@ -24,7 +26,6 @@ export const SearchBar = () => {
           name="search"
           value={searchText}
           onChange={onSearchTextChanged}
-          
         />
       </form>
     </div>
