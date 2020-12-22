@@ -20,11 +20,13 @@ export const getPosts = (data) => {
     let newPostObj = {
       id: nanoid(),
       subreddit: post.subreddit,
+      postHint: post.post_hint,
       title: post.title,
       score: post.score,
       author: post.author,
       url: `https://www.reddit.com/${post.permalink}`,
-      thumbnail: post.thumbnail
+      thumbnail: post.thumbnail,
+      image: post.url,
     }
 
     posts.push(newPostObj);
