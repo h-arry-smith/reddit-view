@@ -1,8 +1,12 @@
 import React from 'react'
 import { PostList } from '../features/posts/PostList'
+import { CategoryList } from '../features/category/CategoryList'
 
 export const Home = () => {
   return (
-    <PostList />
+    <div>
+      <CategoryList />
+      <PostList />
+    </div>
   );
 }

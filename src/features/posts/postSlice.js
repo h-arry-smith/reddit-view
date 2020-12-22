@@ -19,6 +19,7 @@ const postsSlice = createSlice({
   reducers: {
     setEndpoint(state, action) {
       state.endpoint = action.payload.endpoint;
+      state.status = 'idle';
     }
   },
   extraReducers: {
