@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useParams} from 'react-router-dom'
+import { RedditLink } from '../../app/RedditLink';
 import { CommentList } from '../comments/CommentList';
 import { selectPostById } from '../posts/postSlice';
 import { fetchPost } from './detailPostSlice'
@@ -31,6 +32,7 @@ export const DetailPost = () => {
 
   return (
     <div key={post.id}>
+      <RedditLink url={post.url}/>
       <div className="my-6">
         <PostHead 
           title={postDetail.post.title} 
