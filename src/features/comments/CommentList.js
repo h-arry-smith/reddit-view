@@ -2,7 +2,7 @@ import React from 'react'
 import { Comment } from './Comment'
 
 export const CommentList = ({comments}) => {
-  if (!comments) {
+  if (Object.keys(comments).length === 0) {
     return <div>No Comments</div>
   }
 
