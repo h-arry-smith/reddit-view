@@ -14,8 +14,11 @@ export const Post = ({post}) => {
     case 'default':
       thumbImg = <p></p>
       break;
+    case '':
+      thumbImg = <p></p>
+      break;
     default:
-      thumbImg = <img src={post.thumbnail} className="object-cover w-full" alt="little people"/>
+      thumbImg = <img src={post.thumbnail} className="object-cover w-full" alt=""/>
   }
 
   return (
