@@ -1,21 +1,26 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchFrontPage } from '../../util/Reddit'
+import { fetchRedditPage } from '../../util/Reddit'
 
 const initialState = {
   data: [],
   status: 'idle',
+  endpoint: '/r/popular',
   error: null
 };
 
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-  const data = await fetchFrontPage();
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (endpoint) => {
+  const data = await fetchRedditPage(endpoint);
   return data
 })
 
 const postsSlice = createSlice({
   name: 'posts',
   initialState,
-  reducers: {},
+  reducers: {
+    setEndpoint(state, action) {
+      state.endpoint = action.payload.endpoint;
+    }
+  },
   extraReducers: {
     [fetchPosts.pending]: (state, action) => {
       state.status = 'loading';
@@ -31,6 +36,8 @@ const postsSlice = createSlice({
   }
 })
 
+export const {setEndpoint} = postsSlice.actions;
 export default postsSlice.reducer;
+
 export const selectAllPosts = state => state.posts.data;
 export const selectPostById = (state, id) => state.posts.data.find(e => e.id === id)

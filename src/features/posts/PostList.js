@@ -10,13 +10,14 @@ export const PostList = () => {
   const posts = useSelector(selectAllPosts)
 
   const postStatus = useSelector(state => state.posts.status)
+  const endpoint = useSelector(state => state.posts.endpoint)
   const error = useSelector(state => state.posts.error)
 
   useEffect(() => {
     if (postStatus === 'idle') {
-      dispatch(fetchPosts())
+      dispatch(fetchPosts(endpoint))
     }
-  }, [postStatus, dispatch]);
+  }, [postStatus, dispatch, endpoint]);
 
   let content = <div></div>;
 

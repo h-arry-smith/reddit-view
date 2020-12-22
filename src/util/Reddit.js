@@ -3,8 +3,8 @@ import { sampleData } from './sampleResponse'
 import { nanoid } from '@reduxjs/toolkit'
 
 // Fetch and return posts from the frontpage
-export const fetchFrontPage = async () => {
-  let data = await fetch('https://www.reddit.com/r/popular.json')
+export const fetchRedditPage = async (endpoint) => {
+  let data = await fetch(`https://www.reddit.com${endpoint}.json`)
     .then(response => response.json())
     .then(response => response.data);
 
