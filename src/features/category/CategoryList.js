@@ -7,27 +7,28 @@ import { Category } from './Category';
 export const CategoryList = () => {
   const dispatch = useDispatch();
   const current = useSelector(state => state.posts.endpoint);
+  const subreddit = useSelector(state => state.posts.subreddit);
   
   const setEndpointOnClick = (endpoint) => {
     dispatch(setEndpoint(endpoint))
   }
 
   return (
-    <div className="flex items-center justify-center" >
+    <div className="flex items-center justify-center border-t" >
       <Category 
         name='hot' 
-        active={current === '/r/popular/hot' ? true : false} 
-        onClick={() => setEndpointOnClick('/r/popular/hot')} 
+        active={current === `/r/${subreddit}/hot` ? true : false} 
+        onClick={() => setEndpointOnClick(`/r/${subreddit}/hot`)} 
       />
       <Category 
         name='top' 
-        active={current === '/r/popular/top' ? true : false} 
-        onClick={() => setEndpointOnClick('/r/popular/top')} 
+        active={current === `/r/${subreddit}/top` ? true : false} 
+        onClick={() => setEndpointOnClick(`/r/${subreddit}/top`)} 
       />
       <Category 
         name='new' 
-        active={current === '/r/popular/new' ? true : false} 
-        onClick={() => setEndpointOnClick('/r/popular/new')} 
+        active={current === `/r/${subreddit}/new` ? true : false} 
+        onClick={() => setEndpointOnClick(`/r/${subreddit}/new`)} 
       />
     </div>
   );

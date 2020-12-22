@@ -4,6 +4,7 @@ import { fetchRedditPage } from '../../util/Reddit'
 const initialState = {
   data: [],
   status: 'idle',
+  subreddit: 'popular',
   endpoint: '/r/popular/hot',
   searchTerm: '',
   error: null
