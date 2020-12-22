@@ -4,7 +4,7 @@ import { SearchBar } from '../features/search/SearchBar'
 
 export const NavBar = () => {
   return (
-    <div className="h-20 px-4 bg-white border-b-4 border-yellow-500">
+    <div className="px-4 bg-white border-b-4 border-yellow-500">
       <div className="flex items-center justify-between w-auto mt-4 text-center">
         <div className="">
           <h1 className="text-3xl font-semibold">RedditView</h1>

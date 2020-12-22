@@ -5,6 +5,7 @@ const initialState = {
   data: [],
   status: 'idle',
   endpoint: '/r/popular/hot',
+  searchTerm: '',
   error: null
 };
 
@@ -20,6 +21,12 @@ const postsSlice = createSlice({
     setEndpoint(state, action) {
       state.endpoint = action.payload;
       state.status = 'idle';
+      state.searchTerm = '';
+    },
+    setSearch(state, action) {
+      state.endpoint = `/search.json?q=${action.payload}`;
+      state.status = 'idle';
+      state.searchTerm = action.payload;
     }
   },
   extraReducers: {
@@ -37,7 +44,7 @@ const postsSlice = createSlice({
   }
 })
 
-export const {setEndpoint} = postsSlice.actions;
+export const {setEndpoint, setSearch} = postsSlice.actions;
 export default postsSlice.reducer;
 
 export const selectAllPosts = state => state.posts.data;
