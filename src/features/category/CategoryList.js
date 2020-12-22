@@ -13,7 +13,7 @@ export const CategoryList = () => {
   }
 
   return (
-    <div>
+    <div className="flex items-center justify-center" >
       <Category 
         name='hot' 
         active={current === '/r/popular/hot' ? true : false} 
