@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { SearchBar } from '../features/search/SearchBar'
+import { SubredditSelector } from '../features/subreddit/SubredditSelector'
 
 export const NavBar = () => {
   return (
@@ -8,6 +9,9 @@ export const NavBar = () => {
       <div className="flex items-center justify-between w-auto mt-4 text-center">
         <div className="">
           <h1 className="text-3xl font-semibold">RedditView</h1>
+        </div>
+        <div>
+          <SubredditSelector />
         </div>
         <div className="text-lg font-semibold hover:text-yellow-600">
           <Link to="/">Home</Link>

@@ -28,6 +28,12 @@ const postsSlice = createSlice({
       state.endpoint = `/search.json?q=${action.payload}`;
       state.status = 'idle';
       state.searchTerm = action.payload;
+    },
+    setSubreddit(state, action) {
+      state.subreddit = action.payload;
+      state.endpoint = `/r/${state.subreddit}/hot`;
+      state.status = 'idle';
+      state.searchTerm = '';
     }
   },
   extraReducers: {
@@ -45,7 +51,7 @@ const postsSlice = createSlice({
   }
 })
 
-export const {setEndpoint, setSearch} = postsSlice.actions;
+export const {setEndpoint, setSearch, setSubreddit} = postsSlice.actions;
 export default postsSlice.reducer;
 
 export const selectAllPosts = state => state.posts.data;
